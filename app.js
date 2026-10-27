@@ -35,10 +35,14 @@ app.post("/orders", (req, res)=>{
 });
 app.get("/users",(req, res)=>{
     res.send("<h1>Here are all the users</h1>");
-})
+});
 
 app.post("/users", (req, res)=>{
     res.send("<h1>A new user has been added</h1>");
+});
+
+app.use((req, res)=>{
+    res.status(404).send("<h1>404 - Page Not Found</h1>");
 });
 
 app.listen(3000, ()=>{
